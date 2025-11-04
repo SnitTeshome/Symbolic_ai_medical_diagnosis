@@ -1,0 +1,12 @@
+# Ignore virtual environment folder
+myenv/
+venv/
+.env/
+
+# Ignore modules folder
+{$cfgdir}/modules/
+
+# Ignore system files (optional)
+*.pyc
+__pycache__/
+
