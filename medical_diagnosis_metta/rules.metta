@@ -3,7 +3,16 @@
 ;; Binary-premise rules mapping symptom pairs -> disease
 ;; -------------------------------------------------------
 
-;; Rule1: Pneumonia (fever, cough, fatigue)
+;; -------------------------------
+;; Identity rule for facts
+;; -------------------------------
+!(add-atom &rb fact-identity-rule
+   (-> (HasSymptom $d $s)
+       (pf-axiom (HasSymptom $d $s))))
+
+;; -------------------------------
+;; Pneumonia (fever, cough, fatigue)
+;; -------------------------------
 !(add-atom &rb fever-cough-pneumonia-rule
    (-> (HasSymptom $d fever)
        (HasSymptom $d cough)
@@ -19,7 +28,9 @@
        (HasSymptom $d fatigue)
        (HasSymptom $d Pneumonia)))
 
-;; Rule2: Heart Attack (chest_pain, shortness_of_breath, nausea)
+;; -------------------------------
+;; Heart Attack (chest_pain, shortness_of_breath, nausea)
+;; -------------------------------
 !(add-atom &rb chestpain-shortness-heartattack-rule
    (-> (HasSymptom $d chest_pain)
        (HasSymptom $d shortness_of_breath)
@@ -35,7 +46,9 @@
        (HasSymptom $d nausea)
        (HasSymptom $d Heart_attack)))
 
-;; Rule3: Drug Reaction (rash, swelling, itching)
+;; -------------------------------
+;; Drug Reaction (rash, swelling, itching)
+;; -------------------------------
 !(add-atom &rb rash-swelling-drugreaction-rule
    (-> (HasSymptom $d rash)
        (HasSymptom $d swelling)
@@ -51,13 +64,17 @@
        (HasSymptom $d itching)
        (HasSymptom $d Drug_Reaction)))
 
-;; Rule4: Hypertension (headache, dizziness)
+;; -------------------------------
+;; Hypertension (headache, dizziness)
+;; -------------------------------
 !(add-atom &rb headache-dizziness-hypertension-rule
    (-> (HasSymptom $d headache)
        (HasSymptom $d dizziness)
        (HasSymptom $d Hypertension)))
 
-;; Rule5: Paralysis (brain hemorrhage) (weakness, confusion, loss_of_balance)
+;; -------------------------------
+;; Paralysis (brain hemorrhage) (weakness, confusion, loss_of_balance)
+;; -------------------------------
 !(add-atom &rb weakness-confusion-paralysis-rule
    (-> (HasSymptom $d weakness)
        (HasSymptom $d confusion)
@@ -73,13 +90,17 @@
        (HasSymptom $d loss_of_balance)
        (HasSymptom $d Paralysis_brain_hemorrhage)))
 
-;; Rule6: Jaundice (yellow_skin, fatigue)
+;; -------------------------------
+;; Jaundice (yellow_skin, fatigue)
+;; -------------------------------
 !(add-atom &rb yellowskin-fatigue-jaundice-rule
    (-> (HasSymptom $d yellow_skin)
        (HasSymptom $d fatigue)
        (HasSymptom $d Jaundice)))
 
-;; Rule7: Malaria (fever, chills, headache)
+;; -------------------------------
+;; Malaria (fever, chills, headache)
+;; -------------------------------
 !(add-atom &rb fever-chills-malaria-rule
    (-> (HasSymptom $d fever)
        (HasSymptom $d chills)
@@ -95,7 +116,9 @@
        (HasSymptom $d headache)
        (HasSymptom $d Malaria)))
 
-;; Rule8: Chickenpox (rash, fever, itching)
+;; -------------------------------
+;; Chickenpox (rash, fever, itching)
+;; -------------------------------
 !(add-atom &rb rash-fever-chickenpox-rule
    (-> (HasSymptom $d rash)
        (HasSymptom $d fever)
@@ -111,7 +134,9 @@
        (HasSymptom $d itching)
        (HasSymptom $d Chickenpox)))
 
-;; Rule9: Dengue (fever, rash, joint_pain)
+;; -------------------------------
+;; Dengue (fever, rash, joint_pain)
+;; -------------------------------
 !(add-atom &rb fever-rash-dengue-rule
    (-> (HasSymptom $d fever)
        (HasSymptom $d rash)
@@ -127,7 +152,9 @@
        (HasSymptom $d joint_pain)
        (HasSymptom $d Dengue)))
 
-;; Rule10: Typhoid (fever, abdominal_pain, diarrhea)
+;; -------------------------------
+;; Typhoid (fever, abdominal_pain, diarrhea)
+;; -------------------------------
 !(add-atom &rb fever-abdominalpain-typhoid-rule
    (-> (HasSymptom $d fever)
        (HasSymptom $d abdominal_pain)
@@ -143,7 +170,9 @@
        (HasSymptom $d diarrhea)
        (HasSymptom $d Typhoid)))
 
-;; Rule11: Tuberculosis (cough, weight_loss, night_sweats)
+;; -------------------------------
+;; Tuberculosis (cough, weight_loss, night_sweats)
+;; -------------------------------
 !(add-atom &rb cough-weightloss-tb-rule
    (-> (HasSymptom $d cough)
        (HasSymptom $d weight_loss)
